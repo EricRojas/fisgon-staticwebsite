@@ -1,9 +1,12 @@
 
 
-const Contact = () => {
+const Soporte = () => {
   return (
-    <div className="bg-green-100 min-h-screen flex flex-col justify-center items-center">
-      <h1 className="text-center p-4">CONTACT</h1>
+    <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+      <h1 className="text-center p-4">Soporte</h1>
+      <p class="mt-1 p-2 text-start text-sm font-bold text-yellow-500">Pagina en construccion</p>
+      <p class="mt-1 p-2 text-start text-sm font-bold text-blue-700">Pagina en construccion</p>
+      <p class="mt-1 p-2 text-start text-sm font-bold text-red-800">Pagina en construccion</p>
       <p className="mx-5">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
         Aspernatur mollitia voluptate reprehenderit asperiores voluptatum
@@ -22,4 +25,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Soporte

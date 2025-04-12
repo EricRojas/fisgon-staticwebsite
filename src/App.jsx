@@ -4,9 +4,9 @@ import fisgonLogo from './assets/FisgonLogo.svg'
 import Navbar from './components/header/Navbar'
 import './App.css'
 import Home from './pages/1.home/Home'
-import Services from './pages/2.services/Services';
-import Portfolio from './pages/3.portfolio/Portfolio';
-import Contact from './pages/4.contact/Contact';
+import Soluciones from './pages/2soluciones/Soluciones';
+import Soporte from './pages/3.soporte/Soporte'
+import Contacto from './pages/4.contacto/Contacto';
 import Footer from './components/footer/Footer';
 
 function App() {
@@ -19,9 +19,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/soluciones" element={<Soluciones />} />
+          <Route path="/soporte" element={<Soporte />} />
+          <Route path="/contacto" element={<Contacto />} />
+          {/* Catch-all route to redirect to Home */}
+          <Route path="*" element={<Home />} />
         </Routes>
         <Footer />
       </Router>

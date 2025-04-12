@@ -2,36 +2,53 @@ import fisgonLogo from '../../assets/FisgonLogo.svg'
 
 const Home = () => {
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
-      <h1 className="text-center p-4">Pagina en construccion</h1>
-      <h1 className="text-center p-4">HOMEPAGE</h1>
-      <p className="mx-5">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-        Aspernatur mollitia voluptate reprehenderit asperiores voluptatum
-        ullam rerum voluptas, deleniti a praesentium consequuntur expedita 
-        aliquid. Numquam voluptates voluptas eveniet iusto eum perferendis 
-        totam, debitis cumque magnam illo nam error dicta. 
-        Architecto laudantium perspiciatis earum exercitationem reprehenderit sunt, 
-        nam dolorum fugiat velit veniam repudiandae doloremque quod distinctio 
-        maxime at voluptatum. Pariatur cupiditate consequuntur fuga quia ea dolor 
-        laborum adipisci laudantium deleniti odit cum nisi ipsum non voluptatem 
-        ratione, fugit odio nostrum? Molestias fuga est, harum nam enim quis 
-        quibusdam iure, reiciendis rem esse incidunt, fugit id quisquam! 
-        Eaque aliquam dolore veritatis id quasi.</p>
-
+    <div className="bg-gray-100 min-h-screen flex flex-col justify-center">
+      <div className="mb-4"></div>
+      <p class="text-2xl font-semibold text-gray-900">Fisgon-Route</p>
+      <div class="p-4 mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+        <div class="sm:col-span-4">
+          <label for="username" class="text-start block text-sm/6 font-medium text-gray-900">Paradigma</label>
+          <div class="mt-2">
+            <div class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">Necesidad de tener un lector exclusivamente dedicado para el control de rondas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+        <div class="sm:col-span-4">
+          <label for="username" class="text-start block text-sm/6 font-medium text-gray-900">Consideraciones</label>
+          <div class="mt-2">
+            <div class="flex flex-col items-start rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- Actualmente los equipos móviles (entre otros: celulares, tabletas) tienen incorporadas las nuevas y ventajosas tecnologías, las cuales son herramientas 
+              que están disponibles para desarrollar aplicaciones que solucionen nuestras necesidades.</p>
+              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- NFC (Near Field Communication, lo que traducido al español sería Comunicación por Campo Cercano) es una tecnologia de comunicaciones que permite 
+              una conexión para el intercambio de datos con otros dispositivos en distancias inferiores a 10 centímetros.</p>
+              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- NFC intercambia información con alta seguridad y se aplica en: las billeteras digitales, control de acceso, transporte publico; 
+              Sincronización con otros dispositivos: audífonos, parlantes; Compartir datos: fotos, archivos, enlaces a paginas web, etc.</p>
+              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- Las etiquetas (o tags) para NFC son seguras, de bajo costo, tienen un numero de identificación único (UID) y permiten almacenar información.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
+        <div class="sm:col-span-4">
+          <label for="username" class="text-start block text-sm/6 font-medium text-gray-900">Solución</label>
+          <div class="mt-2">
+            <div class="flex flex-col items-start rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- Fisgon-Route es una aplicación que utiliza el equipo móvil como lector y las etiquetas NFC como puntos en el Control de Rondas, con seguridad, 
+              confiabilidad y eficiencia, generando registros de las lecturas en una base de datos y dejando una huella digital en las etiquetas que corresponde con el momento de la lectura para una posible verificación posterior.</p>
+              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- Fisgon-Route genera reportes que se pueden enviar por Whatsapp o por correo electrónico, los cuales se pueden descargar y analizar en la otra 
+              aplicación FisgonPC, que hace parte del paquete y se instala en cualquier computador de escritorio o portatil, para estudiar y analizar la informacion por un supervisor o administrador.</p>
+            </div>
+          </div>
+        </div>
+      </div>
         <div className="logo-container flex justify-center items-center">
           <img src={fisgonLogo} className="logo fisgon" alt="Fisgon logo" />
         </div>
-        <h1>Fisgon Web</h1>
-        <div className="card">
-          <p class="text-2xl font-bold underline">
-            Hola Mundo from Fisgon Web!
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Pagina en construccion
-        </p>
     </div>
+    
   )
 }
 
