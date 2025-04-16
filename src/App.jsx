@@ -4,8 +4,8 @@ import fisgonLogo from './assets/FisgonLogo.svg'
 import Navbar from './components/header/Navbar'
 import './App.css'
 import Home from './pages/1.home/Home'
-import Soluciones from './pages/2soluciones/Soluciones';
-import Soporte from './pages/3.soporte/Soporte'
+import Caracteristicas from './pages/2.caracteristicas/Caracteristicas';
+import Soluciones from './pages/3.soluciones/Soluciones'
 import Contacto from './pages/4.contacto/Contacto';
 import Footer from './components/footer/Footer';
 
@@ -19,8 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/caracteristicas" element={<Caracteristicas />} />
           <Route path="/soluciones" element={<Soluciones />} />
-          <Route path="/soporte" element={<Soporte />} />
           <Route path="/contacto" element={<Contacto />} />
           {/* Catch-all route to redirect to Home */}
           <Route path="*" element={<Home />} />
