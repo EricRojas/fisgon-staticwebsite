@@ -50,7 +50,7 @@ const Soluciones = () => {
   return (
     <div className="bg-white">
       <div className="pt-6">
-        <p class="text-2xl font-semibold text-gray-900">Paquete básico Fisgon-Route</p>
+      <p className="text-2xl font-semibold text-gray-900">Paquete básico Fisgon-Route</p>
         {/* Image gallery */}
           <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
             <div className="grid grid-cols-1 gap-y-4 lg:hidden">
