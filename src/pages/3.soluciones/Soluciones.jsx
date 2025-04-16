@@ -43,7 +43,7 @@ const product = {
     'Un lector NFC con entrada USB',
   ],
   details:
-    'Cada punto tiene un UID que es único e irrepetible. Los seis puntos tipo llavero tienen diferentes colores.',
+    'Cada punto tiene un UID que lo hace único e irrepetible. Los seis puntos tipo llavero tienen diferentes colores.',
 }
 
 const Soluciones = () => {
@@ -52,33 +52,50 @@ const Soluciones = () => {
       <div className="pt-6">
         <p class="text-2xl font-semibold text-gray-900">Paquete básico Fisgon-Route</p>
         {/* Image gallery */}
-        <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-          <img
-            alt={product.images[0].alt}
-            src={product.images[0].src}
-            className="hidden size-full rounded-lg object-cover lg:block"
-          />
-          <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+          <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+            <div className="grid grid-cols-1 gap-y-4 lg:hidden">
+              <img
+                alt={product.images[0].alt}
+                src={product.images[0].src}
+                className="w-full rounded-lg object-cover"
+              />
+              <img
+                alt={product.images[1].alt}
+                src={product.images[1].src}
+                className="w-full rounded-lg object-cover"
+              />
+              <img
+                alt={product.images[2].alt}
+                src={product.images[2].src}
+                className="w-full rounded-lg object-cover"
+              />
+            </div>
             <img
-              alt={product.images[1].alt}
-              src={product.images[1].src}
-              className="aspect-3/2 w-full rounded-lg object-cover"
+              alt={product.images[0].alt}
+              src={product.images[0].src}
+              className="hidden size-full rounded-lg object-cover lg:block"
             />
+            <div className="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+              <img
+                alt={product.images[1].alt}
+                src={product.images[1].src}
+                className="aspect-3/2 w-full rounded-lg object-cover"
+              />
+              <img
+                alt={product.images[2].alt}
+                src={product.images[2].src}
+                className="aspect-3/2 w-full rounded-lg object-cover"
+              />
+            </div>
             <img
-              alt={product.images[2].alt}
-              src={product.images[2].src}
-              className="aspect-3/2 w-full rounded-lg object-cover"
+              alt={product.images[3].alt}
+              src={product.images[3].src}
+              className="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto"
             />
           </div>
-          <img
-            alt={product.images[3].alt}
-            src={product.images[3].src}
-            className="aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-auto"
-          />
-        </div>
-      </div>
-      <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:max-w-7xl lg:px-8">
-        {/* Product info */}
+              </div>
+              <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:max-w-7xl lg:px-8">
+          {/* Product info */}
         <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h2 className="text-2xl font-bold tracking-tight text-start text-gray-900 sm:text-3xl">{product.name}</h2>
