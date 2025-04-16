@@ -200,8 +200,7 @@ const Contacto = () => {
       <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base/7 font-semibold text-gray-900">Sede principal</h2>
           <p className="mt-1 text-sm/6 text-gray-600">
-            Calle 23G bis C # 96f 68, Bogota D. C. Colombia. Tels. (601) 3590025, 310-3011575
-          </p>
+          Tels. +57: (601)3590025, 310-3011575, Bogota D. C. Colombia.          </p>
       </div>
       <div className="mb-2"></div>
     </form>
