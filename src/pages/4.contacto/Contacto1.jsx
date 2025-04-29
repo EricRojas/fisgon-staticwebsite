@@ -17,9 +17,6 @@ const Contacto = () => {
     mensaje: '',
   });
 
-  // State to manage validation errors
-  const [errors, setErrors] = useState({});
-
   // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,41 +26,10 @@ const Contacto = () => {
     }));
   };
 
-  // Validate form data
-  const validate = () => {
-    const newErrors = {};
-
-    // Required fields
-    if (!formData.nombre.trim()) newErrors.nombre = 'El nombre es obligatorio.';
-    if (!formData.apellido.trim()) newErrors.apellido = 'El apellido es obligatorio.';
-    if (!formData.email.trim()) {
-      newErrors.email = 'El correo electrónico es obligatorio.';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'El correo electrónico no es válido.';
-    }
-    if (!formData.telefono.trim()) {
-      newErrors.telefono = 'El teléfono es obligatorio.';
-    } else if (!/^\d+$/.test(formData.telefono)) {
-      newErrors.telefono = 'El teléfono debe contener solo números.';
-    }
-    if (!formData.mensaje.trim()) newErrors.mensaje = 'El mensaje es obligatorio.';
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // Return true if no errors
-  };
-
-  const [submittedData, setSubmittedData] = useState(null);
-
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission behavior
-    if (validate()) {
-      console.log('Form Data Submitted:', formData);
-      setSubmittedData(formData); // Save the submitted data to state
-      alert('Formulario enviado con éxito.');
-    } else {
-      alert('Por favor, corrija los errores en el formulario.');
-    }
+    console.log('Form Data Submitted:', formData);
 
     // Example: Send data to a backend API
     // fetch('/api/contact', {
@@ -106,7 +72,6 @@ const Contacto = () => {
                     placeholder="Opcional"
                     value={formData.empresa}
                     onChange={handleChange}
-                    maxLength={50} // Limit to 50 characters
                     className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
                   />
                 </div>
@@ -127,7 +92,6 @@ const Contacto = () => {
                   placeholder="Obligatorio"
                   value={formData.nombre}
                   onChange={handleChange}
-                  maxLength={20} // Limit to 20 characters
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
@@ -146,7 +110,6 @@ const Contacto = () => {
                   placeholder="Obligatorio"
                   value={formData.apellido}
                   onChange={handleChange}
-                  maxLength={20} // Limit to 20 characters
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
@@ -166,7 +129,6 @@ const Contacto = () => {
                   placeholder="Obligatorio"
                   value={formData.email}
                   onChange={handleChange}
-                  maxLength={50} // Limit to 50 characters
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
@@ -186,7 +148,6 @@ const Contacto = () => {
                   placeholder="Obligatorio"
                   value={formData.telefono}
                   onChange={handleChange}
-                  maxLength={15} // Limit to 15 characters
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
@@ -206,7 +167,6 @@ const Contacto = () => {
                   placeholder="Opcional"
                   value={formData.direccion}
                   onChange={handleChange}
-                  maxLength={50} // Limit to 50 characters
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
@@ -226,7 +186,6 @@ const Contacto = () => {
                   placeholder="Opcional"
                   value={formData.ciudad}
                   onChange={handleChange}
-                  maxLength={20} // Limit to 20 characters
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
@@ -246,7 +205,6 @@ const Contacto = () => {
                   placeholder="Opcional"
                   value={formData.departamento}
                   onChange={handleChange}
-                  maxLength={20} // Limit to 20 characters
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
@@ -284,12 +242,10 @@ const Contacto = () => {
                 <textarea
                   id="mensaje"
                   name="mensaje"
-                  type="text"
                   placeholder="Obligatorio"
                   rows={3}
                   value={formData.mensaje}
                   onChange={handleChange}
-                  maxLength={500} // Limit to 500 characters
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   defaultValue={''}
                 />
@@ -312,21 +268,10 @@ const Contacto = () => {
       </div>
       <div className="mb-4"></div>
       <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base/7 font-semibold text-gray-900">Contacto</h2>
+          <h2 className="text-base/7 font-semibold text-gray-900">Sede principal</h2>
           <p className="mt-1 text-sm/6 text-gray-600">
           Tels. +57: (601)3590025, 310-3011575, Bogota D. C. Colombia.          </p>
       </div>
-      
-      {/* Display submitted data in Contacto form */}
-      {/*}
-      <div>
-        {submittedData && (
-          <div className="mt-6">
-            <h3>Submitted Data:</h3>
-            <pre>{JSON.stringify(submittedData, null, 2)}</pre>
-          </div>
-        )}
-      </div> */}
       <div className="mb-2"></div>
     </form>
   )

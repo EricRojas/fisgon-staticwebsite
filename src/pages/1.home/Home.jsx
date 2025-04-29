@@ -22,7 +22,7 @@ const Home = () => {
             <div class="flex flex-col items-start rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
               <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- Actualmente los equipos móviles (entre otros: celulares, tabletas) tienen incorporadas las nuevas y ventajosas tecnologías, las cuales son herramientas 
               que están disponibles para desarrollar aplicaciones que solucionen nuestras necesidades.</p>
-              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- NFC (Near Field Communication, lo que traducido al español sería Comunicación por Campo Cercano) es una tecnologia de comunicaciones que permite 
+              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- NFC (Near Field Communication, lo que traducido al español sería Comunicación por Campo Cercano) es una tecnología de comunicaciones que permite 
               una conexión para el intercambio de datos con otros dispositivos en distancias inferiores a 10 centímetros.</p>
               <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- NFC intercambia información con alta seguridad y se aplica en: las billeteras digitales, control de acceso, transporte publico; 
               Sincronización con otros dispositivos: audífonos, parlantes; Compartir datos: fotos, archivos, enlaces a paginas web, etc.</p>
@@ -38,8 +38,8 @@ const Home = () => {
             <div class="flex flex-col items-start rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
               <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- Fisgon-Route es una aplicación que utiliza el equipo móvil como lector y las etiquetas NFC como puntos en el Control de Rondas, con seguridad, 
               confiabilidad y eficiencia, generando registros de las lecturas en una base de datos y dejando una huella digital en las etiquetas que corresponde con el momento de la lectura para una posible verificación posterior.</p>
-              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- Fisgon-Route genera reportes que se pueden enviar por Whatsapp o por correo electrónico, los cuales se pueden descargar y analizar en la otra 
-              aplicación FisgonPC, que hace parte del paquete y se instala en cualquier computador de escritorio o portatil, para estudiar y analizar la informacion por un supervisor o administrador.</p>
+              <p class="mt-1 p-4 text-start text-sm/6 text-gray-800">- Fisgon-Route genera reportes que se pueden enviar por Whatsapp o por correo electrónico, los cuales se pueden descargar y analizar en la 
+              aplicación FisgonPC, que hace parte del paquete y se instala en cualquier computador de escritorio o portatil, para estudiar y analizar la información por un supervisor o administrador.</p>
             </div>
           </div>
         </div>
