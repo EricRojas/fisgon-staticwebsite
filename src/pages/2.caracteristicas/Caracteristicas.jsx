@@ -16,13 +16,13 @@ import FisgonPCScreen_4b from "../../assets/images/FisgonPCScreen_4c.jpg"
 
 const features = [
   { name: 'Sencillo de instalar', description: 'Descarga la aplicación y la instala en equipos Android con NFC, convirtiéndolo en un lector' },
-  { name: 'Puntos o etiquetas', description: 'Son únicos, no se pueden repetir gracias a su numero único de identificación UID y guardan información del numero de lectura y la fecha y hora' },
-  { name: 'Usuarios habilitados', description: 'El supervisor define los usuarios y al iniciar el turno debe haber iniciar sesión para poder hacer las lecturas en las rondas' },
-  { name: 'Detección y lectura', description: 'Cuando el lector detecta el punto, intercambia informacion guardando un registro del numero de la lectura, el nombre del punto, su UID, la fecha y hora y el usuario' },
+  { name: 'Puntos o etiquetas', description: 'Son únicos, no se pueden repetir, gracias a su numero único de identificación UID y guardan información del numero de lectura y la fecha y hora en que se realizó' },
+  { name: 'Usuarios habilitados', description: 'El supervisor define los usuarios. Al iniciar el turno el usuario debe iniciar sesión para poder hacer las lecturas en las rondas' },
+  { name: 'Detección y lectura', description: 'Cuando el lector detecta el punto, intercambia información guardando un registro del numero de la lectura, el nombre del punto, su UID, la fecha y hora y el usuario' },
   { name: 'Reportes de lecturas', description: 'Cuando se requiera un reporte de las lecturas realizadas, se genera y se envía al supervisor por correo o por WhatsApp' },
   { name: 'Aplicación para computador del supervisor', description: 'FisgonPC tiene dos funciones: Configuración y estudio de los puntos (o etiquetas) y una base de datos para el manejo de los reportes recibidos' },
-  { name: 'Base de Datos FisgonPC', description: 'Nos permite en el computador del supervisor analizar y verificar el cumplimiento de las rondas, incorporando los reportes de las lecturas' },
-  { name: 'Configuración y manejo de Puntos', description: 'Podemos inicializar asignándoles la ubicación a los puntos antes de ser instalados. También leer las fechas y horas en que se realizaron las lecturas, borrar la información y reasignarlos' },
+  { name: 'Base de Datos FisgonPC', description: 'Nos permite en el computador del supervisor analizar y verificar el cumplimiento de las rondas, mediante la incorporación de los reportes de las lecturas' },
+  { name: 'Configuración y manejo de Puntos', description: 'Podemos inicializar los puntos, asignándoles la ubicación antes de ser instalados. También leer las fechas y horas en que se realizaron las lecturas, borrar la información y reasignarlos' },
 ]
 
 export default function FisgoRoute() {
