@@ -1,9 +1,134 @@
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 import { useState } from 'react'
 
-const Contacto = () => {
+const ContactForm = () => {
+  // State to manage form data
+  const [formData, setFormData] = useState({
+    empresa: '',
+    nombre: '',
+    apellido: '',
+    email: '',
+    telefono: '',
+    direccion: '',
+    ciudad: '',
+    departamento: '',
+    pais: 'Colombia',
+    mensaje: '',
+  });
+
+  // State to manage validation errors
+  const [errors, setErrors] = useState({});
+
+// Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+// Validate form data
+  const validateInputs = () => {
+    const newErrors = {};
+    // Required fields
+    if (!formData.nombre.trim()) newErrors.nombre = 'El nombre es obligatorio.';
+    if (!formData.apellido.trim()) newErrors.apellido = 'El apellido es obligatorio.';
+    if (!formData.email.trim()) {
+      newErrors.email = 'El correo electrónico es obligatorio.';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'El correo electrónico no es válido.';
+    }
+    if (!formData.telefono.trim()) {
+      newErrors.telefono = 'El teléfono es obligatorio.';
+    } else if (!/^\d+$/.test(formData.telefono)) {
+      newErrors.telefono = 'El teléfono debe contener solo números.';
+    }
+    if (!formData.mensaje.trim()) newErrors.mensaje = 'El mensaje es obligatorio.';
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0; // Return true if no errors
+  };
+
+  const [submittedData, setSubmittedData] = useState(null);
+
+  // Submit form data to API
+  const submitToAPI = async (e) => {
+    e.preventDefault();
+    if (validateInputs()){
+        const Invoke_URL = "https://a75ue5vhtj.execute-api.us-east-1.amazonaws.com/InitialStage";
+        const API_URL = "https://a75ue5vhtj.execute-api.us-east-1.amazonaws.com/InitialStage/contactUs";
+        console.log('Form Data Submitted:', formData);
+        //setSubmittedData(formData); // Save the submitted data to state
+        //alert('Formulario enviado y esperando respuesta:\n' + JSON.stringify(formData, null, 2));
+        /*
+        // Custom alert with duration of 3 second
+        const aviso = window.alert;
+        setTimeout(() => {
+          if (window.confirm) window.confirm = aviso; // restore if needed
+        }, 1000);
+        // Custom aviso con duración de 1 segundo
+        const avisoDiv = document.createElement('div');
+        avisoDiv.textContent = 'Formulario enviado y esperando respuesta:\n' + JSON.stringify(formData, null, 2);
+        avisoDiv.style.position = 'fixed';
+        avisoDiv.style.top = '20px';
+        avisoDiv.style.left = '50%';
+        avisoDiv.style.transform = 'translateX(-50%)';
+        avisoDiv.style.background = '#4f46e5';
+        avisoDiv.style.color = '#fff';
+        avisoDiv.style.padding = '16px 24px';
+        avisoDiv.style.borderRadius = '8px';
+        avisoDiv.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+        avisoDiv.style.zIndex = 9999;
+        document.body.appendChild(avisoDiv);
+        setTimeout(() => {
+          document.body.removeChild(avisoDiv);
+        }, 3000);
+        */
+        try {
+            const response = await fetch(API_URL, {
+                //mode: 'no-cors',
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+            if (response.ok) {
+                alert("¡Formulario enviado con éxito!");
+                console.log('¡Formulario enviado con éxito!');
+
+            // Reset form data
+            setFormData({
+                empresa: '',
+                nombre: '',
+                apellido: '',
+                email: '',
+                telefono: '',
+                direccion: '',
+                ciudad: '',
+                departamento: '',
+                pais: 'Colombia',
+                mensaje: '',
+            });
+
+            } else {
+                alert("Error al enviar el formulario.");
+                console.error("Error al enviar el formulario:", response.statusText);
+            }
+        } catch (error) {
+            console.error("Error al enviar el formulario:", error);
+            alert("Error al enviar el formulario: " + error.message);
+        }
+    } else {
+        alert("Por favor, corrija los errores en el formulario.");
+    }
+  };
+
+// Render the form
   return (
-    <form>
+    <form id='contact-form' onSubmit={submitToAPI}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
         <div className="mb-4"></div>
